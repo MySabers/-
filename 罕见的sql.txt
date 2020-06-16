@@ -1,0 +1,6 @@
+select distinct unnest(string_to_array(string_agg(apt_org,','),',')) from h_threat_info where apt_org != ''
+
+
+
+
+psql -c  "select distinct s_ip_location  from h_threat_info where s_ip_location != ''"   -h 127.0.0.1 -p 5432 -d 57_data -U postgres

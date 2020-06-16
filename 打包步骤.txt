@@ -1,0 +1,2 @@
+docker build -t antiy_front .
+docker save antiy_front -o antiy_front.tar

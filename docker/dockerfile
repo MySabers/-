@@ -1,0 +1,23 @@
+# 定义基础镜像
+FROM node
+# 执行命令
+RUN git clone -q https://github.com/docker-in-practice/todo.git
+# 移动到新的克隆目录
+WORKDIR todo
+# 运行命令
+RUN npm install > /dev/null
+# 宿主机文件拷贝到容器内
+COPY source dest
+# 指定构建的容器需要监听的端口
+EXPOSE 8000
+# add命令如果传的压缩文件，是tar类型的，如aa.tar, a.tar.gz,自动解压；,支持源为URL，但是即使为tar也不会解压
+ADD source dest
+# 指定启动容器需要执行的命令
+ENV root=/root
+COPY /root ${root}
+
+# 这个方式执行的命令在运行镜像的时候可以被替换掉
+# CMD ["npm","start"]
+
+# 这个不会被替换掉,具体一会查一下
+ENTRYPOINT ["npm","start"]
