@@ -1,0 +1,1 @@
+1. CAS(compare to swap) 即比较再交换
