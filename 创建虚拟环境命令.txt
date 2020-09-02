@@ -1,1 +1,4 @@
  virtualenv -p D:\Python37\python37.exe python37-env
+
+// mac
+ mkvirtualenv -p python3 datahub 
