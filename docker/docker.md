@@ -12,7 +12,7 @@
 3. 连接容器（常用，会开一个新进程，常用于调试）: `docker container exec -it containerName /bin/bash`
 4. 显示所有容器的不截断信息 : `docker container ls -a --no-trunc`
 5. 显示docker容器内的进程信息 : `docker container top containerId`
-6. 查看容器内的日志 : `docker container logs containerName`，参数 `-ft` 为实时显示日志, `docker logs -f -t  --tail=10 ptdlog-convert`  显示最后多少条日志
+6. 查看容器内的日志 : `docker container logs containerName`，参数 `-ft` 为实时显示日志
 7. 基于容器做镜像 : `docker commit containerName newImagename:v1`
 8. 通过指定`--restart=always`来指定重启 : `docker container run --restart="always --name="demo"  -d imageName`
 
